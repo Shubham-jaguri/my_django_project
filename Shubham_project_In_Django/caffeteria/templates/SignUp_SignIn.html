@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/SignUp_SignIn.css">
+    
+
+    <script src="static/JS/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        .a{
+    text-decoration: none;
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+   
+    
+   
+
+    <a href="/" class="a"> 🔙 </a>
+  
+
+     <div class="container" id="main">
+        <div class="sign-up">
+            <form action=""  method="post" class="form">
+                {% csrf_token %}
+                <h1>Create Account</h1>
+
+                <input type="text" name="name" placeholder="Enter Your Name" class="input">
+                <input type="email" name="email" placeholder="Enter Your Email" class="input">
+                <input type="password" name="pass" placeholder="Enter Your Password" class="input">
+                <button class="button">Sign Up</button>
+                <!-- <input type="submit" name="submit" value="Sign Up"> -->
+                    <script>
+ {% for message in messages %}
+alert("{{message}}")
+ {% endfor %}
+</script> 
+
+            </form>
+        </div>
+
+        <div class="sign-in">
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+                <h1>Sign in</h1>
+
+                <input type="text" name="name" placeholder="Name" class="input">
+                <input type="password" name="pass" placeholder="Password" class="input">
+                <button class="button">Sign In</button>
+                <!-- <input type="submit" name="submit" value="Sign In"> -->
+
+
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-left">
+                    <h1>Welcome Back</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet. </p>
+                    <button id="signIn" class="button" >Sign In</button>
+                </div>
+                <div class="overlay-right">
+                    <h1>Welcome Back</h1>
+                    <p>Lorem ipsum dolor sit amet  dolorum!</p>
+                    <button id="signUp" class="button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const sign_up=document.getElementById('signUp');
+    const sign_in=document.getElementById('signIn');
+    const mainb=document.getElementById('main');
+
+    sign_up.addEventListener('click',()=>{
+        mainb.classList.add("right-panel-active");
+    });
+    sign_in.addEventListener('click',()=>{
+        mainb.classList.remove("right-panel-active");
+    });
+
+
+</script>
+
+<script src="static/JS/bootstrap.min.js"></script> 
+
+
+</body>
+</html>

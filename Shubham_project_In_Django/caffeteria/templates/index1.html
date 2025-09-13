@@ -1,0 +1,46 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+    {% block body %}
+    
+    
+    <section class="hero-section">
+
+      <div class="section-content">
+        <div class="hero-details">
+          <h2 class="title"> Best Coffee</h2>
+          <h3 class="subtitle">Make your day great with our special coffee!</h3>
+          <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup sparks joy.</p>
+
+          <div class="buttons">
+            <a href="order" class="button order-now">Order Now</a> <br>
+            {% comment %} <a href="" class="button contact-us">Contact Us</a> {% endcomment %}
+          </div>
+        </div>
+ 
+
+        {% if not request.user.is_authenticated %}
+        
+        <div class="hero-image-wrapper">
+          <img src="static/img/coffee-hero-section.png" alt="Hero" class="hero-image">
+          {% comment %} <h1>Welcome {{request.user}}</h1> {% endcomment %}
+        </div>
+
+        {% else %}
+        <div class="hero-image-wrapper">
+          <img src="static/img/coffee-hero-section.png" alt="Hero" class="hero-image">
+          <h1>Welcome.......... {{request.user}}</h1>
+        </div>
+        {% endif %}
+      </div>
+      
+    </section>
+    {% endblock body %}
+
+  
+    
+

@@ -1,0 +1,108 @@
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="static/css/OrderForm.css">
+    <link rel="stylesheet" href="static/css/boostrap/bootstrap.min.css">
+
+   
+
+<script src="static/JS/bootstrap.bundle.min.js"></script>
+     <title>Document</title>
+</head>
+<body> 
+
+  
+
+  
+   {% comment %} Message despaly {% endcomment %}
+
+
+ {% for message in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Message:</strong> {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}  
+    
+
+    <form action="" method="post">
+      {% csrf_token %}
+
+{% comment %} {% for message in messages %} {% endcomment %}
+
+{% comment %} <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>Message:</strong> {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> {% endcomment %}
+
+{% comment %} {% endfor %} {% endcomment %}
+
+{% comment %} <script>
+ {% for message in messages %}
+alert("{{message}}")
+ {% endfor %}
+</script> {% endcomment %}
+
+
+      <a href="ind" class="a"> 🔙 </a>
+        <h2 class="h2">Order Form</h2>
+ <div>
+    <label >User ID </label>
+    <input type="text" name="identi" required>
+
+ </div>
+
+  <div>
+    <label >Name </label>
+    <input type="text" name="name" required>
+ </div>
+
+ <div>
+    <label >Select Item </label>
+     <select name="item"  required>
+      
+  <optgroup label="Coffee">
+    <option value="Hot Beverages Rs. 60">Hot Beverages Rs. 60</option>
+    <option value="Cold Beverages Rs. 40">Cold Beverages Rs. 40</option>
+    <option value="Refreshment Rs. 50">Refreshment Rs. 50</option>
+    <option value="Dessert Rs. 30">Dessert Rs. 30</option>
+  </optgroup>
+
+  <optgroup label="Burger">
+   <option value="Special Combos Rs. 60">Special Combos Rs. 60</option>
+   <option value="Burger & French Fries Rs.40">Burger & French Fries Rs.40</option>
+  </optgroup>
+
+</select>
+ </div>
+ 
+<div>
+    <label >Address </label>
+    <input type="text" name="address" required>
+ </div>
+
+ <div>
+    <label >Mobile Number </label>
+    <input type="text" name="mob" required>
+ </div>
+
+ <div>
+    <label >Date & Time </label>
+    <input type="date" name="dt" required>
+ </div>
+
+ <Button type="Submit" class="button">Submit</Button>
+    </form>
+
+    
+
+ 
+<script src="static/JS/bootstrap.min.js"></script> 
+</body>
+</html> 

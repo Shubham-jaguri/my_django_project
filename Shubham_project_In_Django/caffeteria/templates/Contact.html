@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<section class="contact-section" id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-content">
+        <ul class="contact-info-list">
+          <li class="contact-info"> 
+            <i class="fa-solid fa-location-crosshairs"></i>
+             <p>123 Campsite Avenue, Wilderness, CA 98765</p>
+          </li>
+
+           <li class="contact-info"> 
+            <i class="fa-regular fa-envelope"></i>
+             <p>info@coffeeshopwebsite.com</p>
+          </li>
+
+           <li class="contact-info"> 
+            <i class="fa-solid fa-phone"></i>
+             <p>(123) 456-78909</p>
+          </li>
+
+           <li class="contact-info"> 
+            <i class="fa-solid fa-clock"></i>
+             <p>Monday  -  Friday: 9:00 AM - 5:00PM</p>
+          </li>
+
+          <li class="contact-info"> 
+            <i class="fa-solid fa-clock"></i>
+             <p>Saturday: 10:00 AM - 3:00PM</p>
+          </li>
+
+           <li class="contact-info"> 
+            <i class="fa-solid fa-clock"></i>
+             <p>Sunday:  Closed</p>
+          </li>
+
+           <li class="contact-info"> 
+            <i class="fa-solid fa-globe"></i>
+             <p>www.codingindia.com</p>
+          </li>
+        </ul>
+        
+        <form action="https://api.web3forms.com/submit" method="post" class="contact-form">
+          {% csrf_token %}
+          <input type="hidden" name="access_key" value="8ef19c27-5d69-41bc-b505-6af735b573b8">
+          <input type="text"   name="name" placeholder="Your Name" class="form-input" required>
+           <input type="email" name="email" placeholder="Your Email" class="form-input" required>
+           <textarea  name="txt1" placeholder="Your message"  class="form-input" required></textarea>
+           <button class="submit-button">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    {% comment %} Footer section {% endcomment %}
+    <footer class="footer-section">
+      <div class="section-content">
+        <p class="copyright-text">© 2025 Coffee Shop</p>
+        <div class="social-link-list">
+             <a href="" class="social-link"><i class="fa-brands fa-facebook"> </i></a>
+             <a href="" class="social-link"><i class="fa-brands fa-instagram"> </i></a>
+              <a href="" class="social-link"><i class="fa-brands fa-x-twitter"> </i></a>
+        </div>
+
+        <p class="policy-text">
+          <a href="" class="policy-link">Privacy policy</a>
+          <span class="separator">·</span>
+          <a href="" class="policy-link">Refund policy</a>
+        </p>
+      </div>
+    </footer>
+    {% endblock body %}
