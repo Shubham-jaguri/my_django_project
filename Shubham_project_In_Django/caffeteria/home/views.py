@@ -44,7 +44,7 @@ def SignUp(request):
         myuser = User.objects.create_user(uname,email,password)
         myuser.save()
         messages.success(request,'signup successful')  
-        return redirect('/signup') 
+        return redirect('/signin') 
 
     return render(request, 'SignUp_SignIn.html')
 
@@ -167,5 +167,6 @@ def ContactUs(request):
 
     return render(request,'Contact.html')
 #email coding
+
 
 
