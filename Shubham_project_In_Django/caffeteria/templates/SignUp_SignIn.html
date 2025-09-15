@@ -16,6 +16,9 @@
     text-decoration: none;
     font-size: 30px;
 }
+a{
+    text-decoration: none;
+}
     </style>
 </head>
 <body>
@@ -32,9 +35,9 @@
                 {% csrf_token %}
                 <h1>Create Account</h1>
 
-                <input type="text" name="name" placeholder="Enter Your Name" class="input">
-                <input type="email" name="email" placeholder="Enter Your Email" class="input">
-                <input type="password" name="pass" placeholder="Enter Your Password" class="input">
+                <input type="text" name="name" placeholder="Enter Your Name" class="input" required>
+                <input type="email" name="email" placeholder="Enter Your Email" class="input" required>
+                <input type="password" name="pass" placeholder="Enter Your Password" class="input" required>
                 <button class="button">Sign Up</button>
                 <!-- <input type="submit" name="submit" value="Sign Up"> -->
                     <script>
@@ -51,8 +54,8 @@ alert("{{message}}")
                 {% csrf_token %}
                 <h1>Sign in</h1>
 
-                <input type="text" name="name" placeholder="Name" class="input">
-                <input type="password" name="pass" placeholder="Password" class="input">
+                <input type="text" name="name" placeholder="Name" class="input" required>
+                <input type="password" name="pass" placeholder="Password" class="input" required>
                 <button class="button">Sign In</button>
                 <!-- <input type="submit" name="submit" value="Sign In"> -->
 
@@ -64,12 +67,12 @@ alert("{{message}}")
                 <div class="overlay-left">
                     <h1>Welcome Back</h1>
                     <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet. </p>
-                    <button id="signIn" class="button" >Sign In</button>
+                    <button id="signIn" class="button" > <a href="signin">Sign In </a></button>
                 </div>
                 <div class="overlay-right">
                     <h1>Welcome Back</h1>
                     <p>Lorem ipsum dolor sit amet  dolorum!</p>
-                    <button id="signUp" class="button">Sign Up</button>
+                    <button id="signUp" class="button"><a href="signup">Sign Up </a></button>
                 </div>
             </div>
         </div>
@@ -94,4 +97,5 @@ alert("{{message}}")
 
 
 </body>
+
 </html>
